@@ -442,12 +442,13 @@ const exampleStateFile = `
 						}
 					}
 				},
-				"azurerm_virtual_machine.twenty": {
-					"type": "azurerm_virtual_machine",
+				"azurerm_public_ip.twenty": {
+					"type": "azurerm_public_ip",
+					"depends_on": [],
 					"primary": {
-						"id": "888888888",
+						"id": "888888899",
 						"attributes": {
-							"id": "888888888",
+							"id": "888888899",
 							"ip_address": "50.0.0.20",
 							"tags.%": "1",
 							"tags.Role": "azure-worker"
@@ -552,7 +553,7 @@ const expectedListOutput = `
 	"type_libvirt_domain":                ["192.168.102.14"],
 	"type_aws_spot_instance_request":			["50.0.0.17"],
 	"type_linode_instance":               ["80.80.100.124"],
-	"type_azurerm_virtual_machine":				["50.0.0.20"],
+	"type_azurerm_public_ip":				      ["50.0.0.20"],
 
 	"role_azure-worker": ["50.0.0.20"],
 	"role_nine": ["10.0.0.9"],
@@ -765,7 +766,7 @@ olddatacenter="\u003c0.7_format"
 [type_aws_spot_instance_request]
 50.0.0.17
 
-[type_azurerm_virtual_machine]
+[type_azurerm_public_ip]
 50.0.0.20
 
 [type_cloudstack_instance]

@@ -180,7 +180,7 @@ func (r Resource) Tags() map[string]string {
 				t[kk] = vv
 			}
 		}
-	case "azurerm_virtual_machine":
+	case "azurerm_public_ip":
 		for k, v := range r.Attributes() {
 			parts := strings.SplitN(k, ".", 2)
 			if len(parts) == 2 && parts[0] == "tags" && parts[1] != "#" && parts[1] != "%" {
